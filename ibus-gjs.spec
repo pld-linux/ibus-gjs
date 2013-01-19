@@ -3,21 +3,21 @@
 Summary:	IBus gnome-shell extension
 Summary(pl.UTF-8):	Rozszerzenie IBus dla powłoki gnome-shell
 Name:		ibus-gjs
-Version:	3.4.1.20120815
+Version:	3.4.1.20130115
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 ##Source0Download: http://code.google.com/p/ibus/downloads/list
 #Source0:	http://ibus.googlecode.com/files/%{name}-%{version}.tar.gz
 Source0:	http://fujiwara.fedorapeople.org/ibus/gnome-shell/%{name}-%{version}.tar.gz
-# Source0-md5:	8acf4ac4d1a7dfb9a0af9e755a8e7dba
+# Source0-md5:	da9a22c82ab33423d7afeb3da4146fa8
 Patch0:		%{name}-fixes.patch
 URL:		http://code.google.com/p/ibus/
 BuildRequires:	gettext-devel
 BuildRequires:	gjs-devel
 BuildRequires:	gnome-shell
 BuildRequires:	gtk-doc >= 1.9
-BuildRequires:	ibus-devel >= 1.4
+BuildRequires:	ibus-devel >= 1.5.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
@@ -33,8 +33,8 @@ Rozszerzenie IBus dla powłoki gnome-shell.
 Summary:	IBus gnome-shell-extension for GNOME3
 Summary(pl.UTF-8):	Rozszerzenie gnome-shell IBus dla GNOME3
 Group:		Libraries
-Requires:	%{name} = %{version}-%{release}
 Requires:	gnome-shell
+Requires:	ibus >= 1.5.0
 
 %description -n ibus-gnome3
 This is a transitional package which allows users to try out new IBus
@@ -63,12 +63,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-%{__rm} $RPM_BUILD_ROOT%{_localedir}/*/LC_MESSAGES/ibus-gjs.mo
+
+%find_lang ibus-gjs
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -n ibus-gnome3
+%files -n ibus-gnome3 -f ibus-gjs.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %{_datadir}/gnome-shell/js/ui/status/ibus
