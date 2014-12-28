@@ -13,7 +13,7 @@ Source0:	http://fujiwara.fedorapeople.org/ibus/gnome-shell/%{name}-%{version}.ta
 # Source0-md5:	da9a22c82ab33423d7afeb3da4146fa8
 Patch0:		%{name}-fixes.patch
 URL:		http://code.google.com/p/ibus/
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gjs-devel
 BuildRequires:	gnome-shell
 BuildRequires:	gtk-doc >= 1.9
