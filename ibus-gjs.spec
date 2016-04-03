@@ -7,12 +7,11 @@ Version:	3.4.1.20130115
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
-##Source0Download: http://code.google.com/p/ibus/downloads/list
-#Source0:	http://ibus.googlecode.com/files/%{name}-%{version}.tar.gz
+##Source0Download: https://github.com/fujiwarat/ibus-gjs/releases
 Source0:	http://fujiwara.fedorapeople.org/ibus/gnome-shell/%{name}-%{version}.tar.gz
 # Source0-md5:	da9a22c82ab33423d7afeb3da4146fa8
 Patch0:		%{name}-fixes.patch
-URL:		http://code.google.com/p/ibus/
+URL:		https://github.com/fujiwarat/ibus-gjs
 BuildRequires:	gettext-tools
 BuildRequires:	gjs-devel
 BuildRequires:	gnome-shell
