@@ -48,7 +48,7 @@ jako przestarzały po zakończeniu integracji w GNOME3.
 %prep
 %setup -q
 %{__rm} js/ui/status/ibus/xkbLayout.js
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %configure \
